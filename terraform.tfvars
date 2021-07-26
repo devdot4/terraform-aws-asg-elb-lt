@@ -23,7 +23,7 @@ mixed_instances_weighted_capacity2 = "2"
 
 # launch template example
 launch_template_name_prefix   = "example"
-launch_template_instance_type = "c5.large"
+# launch_template_instance_type = "c5.large"
 # launch template example2
 # launch_template_name_prefix2 = "example2"
 
@@ -32,3 +32,13 @@ aws_ami_most_recent   = true
 aws_ami_owners        = ["amazon"]
 aws_ami_filter_name   = "name"
 aws_ami_filter_values = ["amzn-ami-hvm-*-x86_64-gp2"]
+
+app_name = "myapp"
+key_location = "~/.ssh/id_rsa.pub"
+key_name = "mykey"
+ssh_cidr_blocks = ["0.0.0.0/0"]
+
+tags = {
+  Name = "myapp"
+  Environment = "Dev"
+}

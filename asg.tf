@@ -1,5 +1,5 @@
-resource "aws_autoscaling_group" "example" {
-  availability_zones = var.asg_availability_zones
+resource "aws_autoscaling_group" "team4" {
+  availability_zones = data.aws_availability_zones.all.names
   desired_capacity   = var.asg_desired_capacity
   max_size           = var.asg_max_size
   min_size           = var.asg_min_size
@@ -9,16 +9,13 @@ resource "aws_autoscaling_group" "example" {
         launch_template_id = aws_launch_template.example.id
       }
       override {
-        instance_type     = var.mixed_instances_instance_type
-        weighted_capacity = var.mixed_instances_weighted_capacity
+        instance_type     = "c4.large"
+        weighted_capacity = "3"
       }
-      # override {
-      #   instance_type = var.mixed_instances_instance_type2
-      #   launch_template_specification {
-      #     launch_template_id = aws_launch_template.example2.id
-      #   }
-      #   weighted_capacity = var.mixed_instances_weighted_capacity2
-      # }
+      override {
+        instance_type     = "c3.large"
+        weighted_capacity = "2"
+      }
     }
   }
 }
