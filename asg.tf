@@ -6,16 +6,16 @@ resource "aws_autoscaling_group" "team4" {
   mixed_instances_policy {
     launch_template {
       launch_template_specification {
-        launch_template_id = aws_launch_template.example.id
+        launch_template_id = aws_launch_template.team4_template.id
       }
-      override {
-        instance_type     = "c4.large"
-        weighted_capacity = "3"
-      }
-      override {
-        instance_type     = "c3.large"
-        weighted_capacity = "2"
-      }
+      # override {
+      #   instance_type     = "c4.large"
+      #   weighted_capacity = "3"
+      # }
+      # override {
+      #   instance_type     = "c3.large"
+      #   weighted_capacity = "2"
+      # }
     }
   }
 }

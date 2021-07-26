@@ -1,5 +1,5 @@
 
-resource "aws_launch_template" "example" {
+resource "aws_launch_template" "team4_template" {
   name_prefix   = "example"
   image_id      = data.aws_ami.image.id
   instance_type = "t2.micro"
