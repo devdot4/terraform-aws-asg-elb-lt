@@ -29,7 +29,15 @@ variable "aws_security_group_cidr_block" {}
 variable "aws_key_pair_name" {}
 variable "aws_key_pair_path" {}
 
-# CIDR Block.
+# Data Source AWS AMI.
+variable "aws_ami_owners" {}
+variable "aws_ami_most_recent" {}
+variable "aws_ami_filter_name1" {}
+variable "aws_ami_filter_value1" {}
+variable "aws_ami_filter_name2" {}
+variable "aws_ami_filter_value2" {}
+variable "aws_ami_filter_name3" {}
+variable "aws_ami_filter_value3" {}
 
 # Tags.
 variable "aws_tags" {}

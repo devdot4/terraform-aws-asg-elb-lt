@@ -29,6 +29,16 @@ aws_security_group_cidr_block  = ["0.0.0.0/0"]
 aws_key_pair_name = "ssh-key"
 aws_key_pair_path = "~/.ssh/id_rsa.pub"
 
+# Data Source AWS AMI.
+aws_ami_owners        = ["679593333241"]
+aws_ami_most_recent   = true
+aws_ami_filter_name1  = "name"
+aws_ami_filter_value1 = ["CentOS Linux 7 x86_64 HVM EBS *"]
+aws_ami_filter_name2  = "architecture"
+aws_ami_filter_value2 = ["x86_64"]
+aws_ami_filter_name3  = "root-device-type"
+aws_ami_filter_value3 = ["ebs"]
+
 # Tags.
 aws_tags = {
   Name        = "team4"
