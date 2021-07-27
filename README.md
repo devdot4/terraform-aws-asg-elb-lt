@@ -3,7 +3,9 @@
 └── provider.tf
     variable.tf
     └── terraform.tfvars
-        ├── data.tf
-        ├── asg.tf
-        └── launch_tmpl.tf
+        ├── auto-scaling-group.tf
+        ├── data-source.tf
+        ├── elastic-load-balancer.tf
+        ├── launch_template.tf
+        └── security-group.tf
 ```
