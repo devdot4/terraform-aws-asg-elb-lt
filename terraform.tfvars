@@ -39,6 +39,10 @@ aws_security_group_description   = "Allow TLS inbound traffic."
 aws_security_group_service_ports = ["22", "80", "443"]
 aws_security_group_cidr_block    = ["0.0.0.0/0"]
 
+# SSH-Keygen.
+aws_key_pair_name = "ssh-key"
+aws_key_pair_path = "~/.ssh/id_rsa.pub"
+
 # Data Source AWS AMI.
 aws_ami_owners        = ["679593333241"]
 aws_ami_most_recent   = true
@@ -48,10 +52,6 @@ aws_ami_filter_name2  = "architecture"
 aws_ami_filter_value2 = ["x86_64"]
 aws_ami_filter_name3  = "root-device-type"
 aws_ami_filter_value3 = ["ebs"]
-
-# SSH-Keygen.
-aws_key_pair_name = "ssh-key"
-aws_key_pair_path = "~/.ssh/id_rsa.pub"
 
 # Tags.
 aws_tags = {
