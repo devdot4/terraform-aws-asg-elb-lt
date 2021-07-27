@@ -1,5 +1,5 @@
-resource "aws_elb" "elb_team4" {
-  name               = "elb-team4"
+resource "aws_elb" "elb-team4" {
+  name               = var.aws_elb_name
   availability_zones = data.aws_availability_zones.all.names
   listener {
     instance_port     = 80
@@ -20,7 +20,7 @@ resource "aws_elb" "elb_team4" {
   connection_draining_timeout = 400
   tags                        = var.tags
 }
-resource "aws_autoscaling_attachment" "asg_attach_team4" {
-  autoscaling_group_name = aws_autoscaling_group.asg_team4.id
-  elb                    = aws_elb.elb_team4.id
+resource "aws_autoscaling_attachment" "asg-attach-team4" {
+  autoscaling_group_name = aws_autoscaling_group.asg-team4.id
+  elb                    = aws_elb.elb-team4.id
 }

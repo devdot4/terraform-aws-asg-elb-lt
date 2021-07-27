@@ -1,6 +1,6 @@
-resource "aws_security_group" "sec_group_team4" {
-  name        = "${var.app_name}-team4"
-  description = "Allow TLS inbound traffic."
+resource "aws_security_group" "sec-group-team4" {
+  name        = var.aws_security_group_name
+  description = var.aws_security_group_description
   ingress {
     description = "ssh"
     from_port   = 22
