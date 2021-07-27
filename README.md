@@ -1,15 +1,16 @@
 # Team-4 Module
 File Hierarchy:
 ```
+├─data.tf
+├─module.tf
 ├─provider.tf
 ├─user-data.sh
-├─data-source.tf
 └─variable.tf
   └─terraform.tfvars
-    ├─auto-scaling-group.tf
-    ├─elastic-load-balancer.tf
-    ├─launch_template.tf
-    └─security-group.tf
+    ├─aws_autoscaling-group.tf
+    ├─aws_elb.tf
+    ├─aws_launch_template.tf
+    └─aws_security_group.tf
 ```
 Module Configuration:
 ```
