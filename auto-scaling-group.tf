@@ -1,9 +1,9 @@
 resource "aws_autoscaling_group" "asg-team4" {
-  availability_zones = data.aws_availability_zones.all.names
-  desired_capacity   = var.aws_autoscaling_group_desired_capacity
-  max_size           = var.aws_autoscaling_group_max_size
-  min_size           = var.aws_autoscaling_group_min_size
-  name               = var.aws_autoscaling_group_name
+  name                = var.aws_autoscaling_group_name
+  desired_capacity    = var.aws_autoscaling_group_desired_capacity
+  max_size            = var.aws_autoscaling_group_max_size
+  min_size            = var.aws_autoscaling_group_min_size
+  vpc_zone_identifier = module.vpc.public_subnets
   mixed_instances_policy {
     launch_template {
       launch_template_specification {
