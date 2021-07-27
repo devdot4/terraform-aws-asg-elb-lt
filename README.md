@@ -1,5 +1,5 @@
 # Team-4 Module
-File Hierarchy:
+File Dependency Hierarchy:
 ```
 ├─data.tf
 ├─module.tf
