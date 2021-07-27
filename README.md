@@ -1,5 +1,4 @@
 # Team-4 Module
-
 File Hierarchy:
 ```
 └─provider.tf
@@ -11,7 +10,6 @@ File Hierarchy:
     ├─launch_template.tf
     └─security-group.tf
 ```
-
 Module Configuration:
 ```
 # AWS Region.
@@ -41,14 +39,14 @@ aws_security_group_name        = "sec-group-team4"
 aws_security_group_description = "Allow TLS inbound traffic."
 
 # SSH-Keygen.
-key_name     = "ssh-key"
-key_location = "~/.ssh/id_rsa.pub"
+aws_key_pair_name = "ssh-key"
+aws_key_pair_path = "~/.ssh/id_rsa.pub"
 
 # CIDR Block.
-open_cidr_block = ["0.0.0.0/0"]
+aws_security_group_cidr = ["0.0.0.0/0"]
 
 # Tags.
-tags = {
+aws_tags = {
   Name        = "team4"
   Environment = "dev"
 }
