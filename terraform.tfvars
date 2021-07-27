@@ -23,7 +23,7 @@ aws_elb_name = "elb-team4"
 # Security Group.
 aws_security_group_name        = "sec-group-team4"
 aws_security_group_description = "Allow TLS inbound traffic."
-aws_security_group_cidr_block = ["0.0.0.0/0"]
+aws_security_group_cidr_block  = ["0.0.0.0/0"]
 
 # SSH-Keygen.
 aws_key_pair_name = "ssh-key"
