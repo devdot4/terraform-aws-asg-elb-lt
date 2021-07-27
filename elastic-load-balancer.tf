@@ -18,7 +18,7 @@ resource "aws_elb" "elb-team4" {
   idle_timeout                = 400
   connection_draining         = true
   connection_draining_timeout = 400
-  tags                        = var.tags
+  tags                        = var.aws_tags
 }
 resource "aws_autoscaling_attachment" "asg-attach-team4" {
   autoscaling_group_name = aws_autoscaling_group.asg-team4.id

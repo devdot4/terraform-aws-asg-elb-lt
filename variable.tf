@@ -25,11 +25,11 @@ variable "aws_security_group_description" {}
 variable "aws_security_group_name" {}
 
 # SSH-Keygen.
-variable "key_name" {}
-variable "key_location" {}
+variable "aws_key_pair_name" {}
+variable "aws_key_pair_path" {}
 
 # CIDR Block.
-variable "open_cidr_block" {}
+variable "aws_security_group_cidr" {}
 
 # Tags.
-variable "tags" {}
+variable "aws_tags" {}
