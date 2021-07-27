@@ -18,6 +18,9 @@ data "aws_ami" "image" {
 output "az" {
   value = data.aws_availability_zones.all.names
 }
-output "module" {
-  value = module.vpc
+output "public" {
+  value = module.vpc.public_subnets
+}
+output "private" {
+  value = module.vpc.private_subnets
 }
