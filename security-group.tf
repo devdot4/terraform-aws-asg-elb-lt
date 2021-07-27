@@ -6,21 +6,21 @@ resource "aws_security_group" "sec-group-team4" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = var.aws_security_group_cidr
+    cidr_blocks = var.aws_security_group_cidr_block
   }
   ingress {
     description = "http"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = var.aws_security_group_cidr
+    cidr_blocks = var.aws_security_group_cidr_block
   }
   ingress {
     description = "https"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = var.aws_security_group_cidr
+    cidr_blocks = var.aws_security_group_cidr_block
   }
   egress {
     from_port   = 0

@@ -2,16 +2,16 @@
 aws_region = "us-east-1"
 
 # Auto Scaling Group.
-asg_name             = "asg-team4"
-asg_desired_capacity = 2
-asg_min_size         = 2
-asg_max_size         = 99
+aws_autoscaling_group_name             = "asg-team4"
+aws_autoscaling_group_desired_capacity = 2
+aws_autoscaling_group_min_size         = 2
+aws_autoscaling_group_max_size         = 99
 
 # ASG Mixed Instance Types.
-asg_instance_type_1     = "t2.micro"
-asg_weighted_capacity_1 = "4"
-asg_instance_type_2     = "t3.micro"
-asg_weighted_capacity_2 = "2"
+aws_autoscaling_group_instance_type_1     = "t2.micro"
+aws_autoscaling_group_weighted_capacity_1 = "4"
+aws_autoscaling_group_instance_type_2     = "t3.micro"
+aws_autoscaling_group_weighted_capacity_2 = "2"
 
 # Launch Template Configuration.
 aws_launch_template_name          = "lt-team4"
@@ -23,13 +23,11 @@ aws_elb_name = "elb-team4"
 # Security Group.
 aws_security_group_name        = "sec-group-team4"
 aws_security_group_description = "Allow TLS inbound traffic."
+aws_security_group_cidr_block = ["0.0.0.0/0"]
 
 # SSH-Keygen.
 aws_key_pair_name = "ssh-key"
 aws_key_pair_path = "~/.ssh/id_rsa.pub"
-
-# CIDR Block.
-aws_security_group_cidr = ["0.0.0.0/0"]
 
 # Tags.
 aws_tags = {
