@@ -17,13 +17,27 @@ aws_autoscaling_group_weighted_capacity_2 = "2"
 aws_launch_template_name          = "lt-team4"
 aws_launch_template_instance_type = "t2.micro"
 
-# Elastic Load Balancer
-aws_elb_name = "elb-team4"
+# Elastic Load Balancer.
+aws_elb_name                             = "elb-team4"
+aws_elb_listener_instance_port           = 80
+aws_elb_listener_instance_protocol       = "http"
+aws_elb_listener_lb_port                 = 80
+aws_elb_listener_lb_protocol             = "http"
+aws_elb_health_check_healthy_threshold   = 2
+aws_elb_health_check_unhealthy_threshold = 2
+aws_elb_health_check_timeout             = 3
+aws_elb_health_check_target              = "HTTP:80/"
+aws_elb_health_check_interval            = 30
+aws_elb_cross_zone_load_balancing        = true
+aws_elb_idle_timeout                     = 400
+aws_elb_connection_draining              = true
+aws_elb_connection_draining_timeout      = 400
 
 # Security Group.
-aws_security_group_name        = "sec-group-team4"
-aws_security_group_description = "Allow TLS inbound traffic."
-aws_security_group_cidr_block  = ["0.0.0.0/0"]
+aws_security_group_name          = "sec-group-team4"
+aws_security_group_description   = "Allow TLS inbound traffic."
+aws_security_group_cidr_block    = ["0.0.0.0/0"]
+aws_security_group_service_ports = ["22", "80", "443"]
 
 # SSH-Keygen.
 aws_key_pair_name = "ssh-key"
