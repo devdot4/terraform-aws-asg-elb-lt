@@ -1,3 +1,5 @@
+data "aws_availability_zones" "all" {}
+output "az" { value = data.aws_availability_zones.all.names }
 data "aws_ami" "image" {
   owners      = ["679593333241"]
   most_recent = true
@@ -13,8 +15,4 @@ data "aws_ami" "image" {
     name   = "root-device-type"
     values = ["ebs"]
   }
-}
-data "aws_availability_zones" "all" {}
-output "az" {
-  value = data.aws_availability_zones.all.names
 }

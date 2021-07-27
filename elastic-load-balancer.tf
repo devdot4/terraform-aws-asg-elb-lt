@@ -1,5 +1,5 @@
-resource "aws_elb" "bar" {
-  name               = "foobar-terraform-elbs"
+resource "aws_elb" "elb_team4" {
+  name               = "elb-team4"
   availability_zones = data.aws_availability_zones.all.names
   listener {
     instance_port     = 80
@@ -20,9 +20,7 @@ resource "aws_elb" "bar" {
   connection_draining_timeout = 400
   tags                        = var.tags
 }
-
-
-resource "aws_autoscaling_attachment" "asg_attachment_bar" {
-  autoscaling_group_name = aws_autoscaling_group.team4.id
-  elb                    = aws_elb.bar.id
+resource "aws_autoscaling_attachment" "asg_attach_team4" {
+  autoscaling_group_name = aws_autoscaling_group.asg_team4.id
+  elb                    = aws_elb.elb_team4.id
 }
