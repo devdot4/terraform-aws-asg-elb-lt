@@ -1,17 +1,24 @@
 resource "aws_security_group" "sec_group_team4" {
   name        = "${var.app_name}-team4"
-  description = "Allow TLS inbound traffic"
+  description = "Allow TLS inbound traffic."
   ingress {
-    description = "VPC - SSH"
+    description = "ssh"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = var.open_cidr_block
   }
   ingress {
-    description = "VPC - HTTP"
+    description = "http"
     from_port   = 80
     to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = var.open_cidr_block
+  }
+  ingress {
+    description = "https"
+    from_port   = 443
+    to_port     = 443
     protocol    = "tcp"
     cidr_blocks = var.open_cidr_block
   }

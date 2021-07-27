@@ -1,24 +1,22 @@
-# aws region
+# AWS Region.
 aws_region = "us-east-1"
 
-# asg mixed instance types
+# ASG Mixed Instance Types.
 asg_desired_capacity = 1
 asg_min_size         = 1
 asg_max_size         = 1
 
-# data source for aws_ami
-aws_ami_most_recent   = true
-aws_ami_owners        = ["amazon"]
-aws_ami_filter_name   = "name"
-aws_ami_filter_values = ["amzn-ami-hvm-*-x86_64-gp2"]
+# Security Group Name.
+app_name = "wordpress"
 
-# other stuff
-app_name        = "wordpress"
-key_location    = "~/.ssh/id_rsa.pub"
-key_name        = "mykey"
+# SSH-Key
+key_name     = "mykey"
+key_location = "~/.ssh/id_rsa.pub"
+
+# CIDR Block.
 open_cidr_block = ["0.0.0.0/0"]
 
-# AWS tags
+# AWS Tags.
 tags = {
   name        = "wordpress"
   environment = "dev"
