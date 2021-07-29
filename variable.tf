@@ -10,13 +10,14 @@ variable "vpc_private_cidr_1" {}
 variable "vpc_private_cidr_2" {}
 variable "vpc_private_cidr_3" {}
 
-# VPC Module - Team 3.
+# RDS Module - Team 3.
 variable "rds_name" {}
 variable "rds_engine" {}
 variable "rds_engine_version" {}
 variable "rds_instance_class" {}
 variable "rds_ssm_parameter_name" {}
 variable "rds_route53_zone" {}
+variable "rds_subnet_group_name" {}
 
 # Auto Scaling Group.
 variable "aws_asg_name" {}
@@ -33,6 +34,8 @@ variable "aws_asg_instance_type_1" {}
 variable "aws_asg_weighted_capacity_1" {}
 variable "aws_asg_instance_type_2" {}
 variable "aws_asg_weighted_capacity_2" {}
+variable "aws_asg_instance_type_3" {}
+variable "aws_asg_weighted_capacity_3" {}
 
 # Elastic Load Balancer.
 variable "aws_elb_name" {}

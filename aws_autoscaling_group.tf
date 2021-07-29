@@ -24,6 +24,10 @@ resource "aws_autoscaling_group" "aws_asg" {
         instance_type     = var.aws_asg_instance_type_2
         weighted_capacity = var.aws_asg_weighted_capacity_2
       }
+      override {
+        instance_type     = var.aws_asg_instance_type_3
+        weighted_capacity = var.aws_asg_weighted_capacity_3
+      }
     }
   }
 }

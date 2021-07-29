@@ -17,6 +17,7 @@ rds_engine_version     = "5.6.10a"
 rds_instance_class     = "db.t3.small"
 rds_ssm_parameter_name = "admin"
 rds_route53_zone       = "devdot.com"
+rds_subnet_group_name  = "rds-aurora"
 
 # Auto Scaling Group.
 aws_asg_name               = "aws-asg"
@@ -29,10 +30,12 @@ aws_asg_capacity_rebalance = true
 aws_asg_on_demand_base_capacity                  = 0
 aws_asg_on_demand_percentage_above_base_capacity = 25
 aws_asg_spot_allocation_strategy                 = "capacity-optimized"
-aws_asg_instance_type_1                          = "c4.large"
-aws_asg_weighted_capacity_1                      = "3"
-aws_asg_instance_type_2                          = "c3.large"
+aws_asg_instance_type_1                          = "t2.micro"
+aws_asg_weighted_capacity_1                      = "4"
+aws_asg_instance_type_2                          = "t3.small"
 aws_asg_weighted_capacity_2                      = "2"
+aws_asg_instance_type_3                          = "t3.xlarge"
+aws_asg_weighted_capacity_3                      = "1"
 
 # Elastic Load Balancer.
 aws_elb_name                             = "aws-elb"
