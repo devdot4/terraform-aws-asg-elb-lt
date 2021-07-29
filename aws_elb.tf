@@ -21,11 +21,6 @@ resource "aws_elb" "aws_elb" {
   connection_draining_timeout = var.aws_elb_connection_draining_timeout
   tags                        = var.aws_tags
 }
-# resource "aws_elb_attachment" "baz" {
-#   elb      = aws_elb.aws_elb.id
-#   instance = data.aws_instances.test.id
-# }
-
 resource "aws_lb_target_group" "aws_lb_tg" {
   name     = var.aws_lb_target_group_name
   port     = var.aws_lb_target_group_port

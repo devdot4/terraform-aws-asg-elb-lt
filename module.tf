@@ -1,3 +1,5 @@
+provider "aws" { region = var.aws_region }
+data "aws_availability_zones" "all" {}
 module "vpc" {
   source        = "dalerboboev/vpc1/aws"
   version       = "1.0.13"
@@ -12,23 +14,22 @@ module "vpc" {
   tags          = var.aws_tags
 }
 module "rds" {
-  source         = "maxat2416/RDS-project/aws"
-  version        = "1.0.7"
-  name           = var.rds_name
-  engine         = var.rds_engine
-  engine_version = var.rds_engine_version
-  instance_class = var.rds_instance_class
-  # aws_ssm_parameter_name   = var.rds_ssm_parameter_name
+  source                   = "maxat2416/RDS-project/aws"
+  version                  = "1.0.8"
+  region                   = var.aws_region
+  name                     = var.rds_name
+  engine                   = var.rds_engine
+  engine_version           = var.rds_engine_version
+  instance_class           = var.rds_instance_class
   aws_route53_zone         = var.rds_route53_zone
   aws_db_subnet_group_name = var.rds_subnet_group_name
+  aws_cluster_identifier   = var.rds_cluster_identifier
+  master_username          = var.rds_master_username
+  master_password          = var.rds_master_password
   vpc_id                   = module.vpc.vpc
   subnet_ids               = module.vpc.private_subnets
   aws_db_subnet_group      = module.vpc.private_subnets
   vpc_security_group_id    = aws_security_group.aws_sg.id
   allowed_security_groups  = [aws_security_group.aws_sg.id]
   allowed_cidr_blocks      = [var.vpc_cidr_block]
-  region                   = var.aws_region
-  master_username          = var.rds_master_username
-  master_password          = var.rds_master_password
-  publicly_accessible      = var.rds_publicly_accessible
 }
