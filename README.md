@@ -74,15 +74,15 @@ aws_lb_target_group_protocol = "HTTP"
 aws_lt_name          = "aws-lt"
 aws_lt_instance_type = "c5.large"
 
-# Security Group.
-aws_security_group_name          = "aws-sg"
-aws_security_group_description   = "Allow TLS inbound traffic."
-aws_security_group_service_ports = ["22", "80", "443", "3306"]
-aws_security_group_cidr_block    = "0.0.0.0/0"
-
 # SSH-Keygen.
-aws_key_pair_name = "aws-key-pair"
-aws_key_pair_path = "~/.ssh/id_rsa.pub"
+aws_kp_name = "aws-key-pair"
+aws_kp_path = "~/.ssh/id_rsa.pub"
+
+# Security Group.
+aws_sg_name          = "aws-sg"
+aws_sg_description   = "Allow TLS inbound traffic."
+aws_sg_service_ports = ["22", "80", "443", "3306"]
+aws_sg_cidr_block    = "0.0.0.0/0"
 
 # Data Source AWS AMI.
 aws_ami_owners         = "679593333241"
@@ -96,7 +96,8 @@ aws_ami_filter_value_3 = "ebs"
 
 # Tags.
 aws_tags = {
-  Name        = "team4"
-  Environment = "dev"
+  Name        = "team-4"
+  Environment = "production"
+  Batch       = "january"
 }
 ```
