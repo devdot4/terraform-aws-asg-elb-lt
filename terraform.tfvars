@@ -33,11 +33,11 @@ aws_asg_capacity_rebalance = true
 aws_asg_on_demand_base_capacity                  = 50
 aws_asg_on_demand_percentage_above_base_capacity = 50
 aws_asg_spot_allocation_strategy                 = "capacity-optimized"
-aws_asg_instance_type_1                          = "t2.micro"
-aws_asg_weighted_capacity_1                      = "10"
-aws_asg_instance_type_2                          = "t3.small"
-aws_asg_weighted_capacity_2                      = "5"
-aws_asg_instance_type_3                          = "t3.xlarge"
+aws_asg_instance_type_1                          = "c3.large"
+aws_asg_weighted_capacity_1                      = "4"
+aws_asg_instance_type_2                          = "c4.large"
+aws_asg_weighted_capacity_2                      = "3"
+aws_asg_instance_type_3                          = "c5.large"
 aws_asg_weighted_capacity_3                      = "2"
 
 # Elastic Load Balancer.
@@ -64,7 +64,7 @@ aws_lb_target_group_protocol = "HTTP"
 # Launch Template Configuration.
 aws_lt_name          = "aws-lt"
 aws_lt_image_id      = "ami-0e34887e651572049"
-aws_lt_instance_type = "c5.large"
+aws_lt_instance_type = "c3.large"
 
 # SSH-Keygen.
 aws_kp_name = "aws-key-pair"
