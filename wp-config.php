@@ -29,7 +29,7 @@ define( 'DB_USER', 'admin' );
 define( 'DB_PASSWORD', 'redhat69' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'read_instance1.devdot4.com' );
+define( 'DB_HOST', 'write1.devdot4.net' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
