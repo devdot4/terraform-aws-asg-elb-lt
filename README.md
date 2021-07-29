@@ -2,35 +2,55 @@
 File Dependency Hierarchy:
 ```
 ├─data.tf
-├─module.tf
-├─provider.tf
-├─user-data.sh
-└─variable.tf
+├─variable.tf
+└─module.tf
   └─terraform.tfvars
-    ├─aws_autoscaling-group.tf
     ├─aws_elb.tf
-    ├─aws_launch_template.tf
-    └─aws_security_group.tf
+    ├─aws_autoscaling-group.tf
+    ├─aws_security_group.tf
+    └─aws_launch_template.tf
+      └─user-data.sh
 ```
 Module Configuration:
 ```
 # AWS Region.
 aws_region = "us-east-1"
 
+# VPC Module - Team 2
+vpc_cidr_block     = "10.0.0.0/16"
+vpc_public_cidr_1  = "10.0.101.0/24"
+vpc_public_cidr_2  = "10.0.102.0/24"
+vpc_public_cidr_3  = "10.0.103.0/24"
+vpc_private_cidr_1 = "10.0.1.0/24"
+vpc_private_cidr_2 = "10.0.2.0/24"
+vpc_private_cidr_3 = "10.0.3.0/24"
+
+# RDS Module - Team 3
+rds_name               = "rds_db_team3_are_the_best"
+rds_engine             = "aurora"
+rds_engine_version     = "5.6.10a"
+rds_instance_class     = "db.t3.small"
+rds_ssm_parameter_name = "admin"
+rds_route53_zone       = "devdot.com"
+
 # Auto Scaling Group.
-aws_autoscaling_group_name             = "asg-team4"
-aws_autoscaling_group_desired_capacity = 2
-aws_autoscaling_group_min_size         = 2
-aws_autoscaling_group_max_size         = 99
+aws_asg_name               = "aws-asg"
+aws_asg_desired_capacity   = 5
+aws_asg_min_size           = 5
+aws_asg_max_size           = 99
+aws_asg_capacity_rebalance = true
 
 # ASG Mixed Instance Types.
-aws_autoscaling_group_instance_type_1     = "t2.micro"
-aws_autoscaling_group_weighted_capacity_1 = "4"
-aws_autoscaling_group_instance_type_2     = "t3.micro"
-aws_autoscaling_group_weighted_capacity_2 = "2"
+aws_asg_on_demand_base_capacity                  = 0
+aws_asg_on_demand_percentage_above_base_capacity = 25
+aws_asg_spot_allocation_strategy                 = "capacity-optimized"
+aws_asg_instance_type_1                          = "c4.large"
+aws_asg_weighted_capacity_1                      = "3"
+aws_asg_instance_type_2                          = "c3.large"
+aws_asg_weighted_capacity_2                      = "2"
 
 # Elastic Load Balancer.
-aws_elb_name                             = "elb-team4"
+aws_elb_name                             = "aws-elb"
 aws_elb_listener_instance_port           = 80
 aws_elb_listener_instance_protocol       = "http"
 aws_elb_listener_lb_port                 = 80
@@ -45,29 +65,34 @@ aws_elb_idle_timeout                     = 400
 aws_elb_connection_draining              = true
 aws_elb_connection_draining_timeout      = 400
 
+# Elastic Load Balancer Attachment.
+aws_lb_target_group_name     = "target-group-team4"
+aws_lb_target_group_port     = 80
+aws_lb_target_group_protocol = "HTTP"
+
 # Launch Template Configuration.
-aws_launch_template_name          = "lt-team4"
-aws_launch_template_instance_type = "t2.micro"
+aws_lt_name          = "aws-lt"
+aws_lt_instance_type = "c5.large"
 
 # Security Group.
-aws_security_group_name          = "sec-group-team4"
+aws_security_group_name          = "aws-sg"
 aws_security_group_description   = "Allow TLS inbound traffic."
-aws_security_group_service_ports = ["22", "80", "443"]
-aws_security_group_cidr_block    = ["0.0.0.0/0"]
-
-# Data Source AWS AMI.
-aws_ami_owners        = ["679593333241"]
-aws_ami_most_recent   = true
-aws_ami_filter_name1  = "name"
-aws_ami_filter_value1 = ["CentOS Linux 7 x86_64 HVM EBS *"]
-aws_ami_filter_name2  = "architecture"
-aws_ami_filter_value2 = ["x86_64"]
-aws_ami_filter_name3  = "root-device-type"
-aws_ami_filter_value3 = ["ebs"]
+aws_security_group_service_ports = ["22", "80", "443", "3306"]
+aws_security_group_cidr_block    = "0.0.0.0/0"
 
 # SSH-Keygen.
-aws_key_pair_name = "ssh-key"
+aws_key_pair_name = "aws-key-pair"
 aws_key_pair_path = "~/.ssh/id_rsa.pub"
+
+# Data Source AWS AMI.
+aws_ami_owners         = "679593333241"
+aws_ami_most_recent    = true
+aws_ami_filter_name_1  = "name"
+aws_ami_filter_value_1 = "CentOS Linux 7 x86_64 HVM EBS *"
+aws_ami_filter_name_2  = "architecture"
+aws_ami_filter_value_2 = "x86_64"
+aws_ami_filter_name_3  = "root-device-type"
+aws_ami_filter_value_3 = "ebs"
 
 # Tags.
 aws_tags = {
