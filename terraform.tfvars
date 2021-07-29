@@ -11,12 +11,12 @@ vpc_private_cidr_2 = "10.0.2.0/24"
 vpc_private_cidr_3 = "10.0.3.0/24"
 
 # RDS Module - Team 3
-# rds_name               = "rds_db_team3_are_the_best"
-# rds_engine             = "aurora"
-# rds_engine_version     = "5.6.10a"
-# rds_instance_class     = "db.t3.small"
-# rds_ssm_parameter_name = "admin"
-# rds_route53_zone       = "devdot.com"
+rds_name               = "rds_db_team3_are_the_best"
+rds_engine             = "aurora"
+rds_engine_version     = "5.6.10a"
+rds_instance_class     = "db.t3.small"
+rds_ssm_parameter_name = "admin"
+rds_route53_zone       = "devdot.com"
 
 # Auto Scaling Group.
 aws_asg_name               = "aws-asg"

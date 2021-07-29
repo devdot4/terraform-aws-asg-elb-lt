@@ -11,12 +11,12 @@ variable "vpc_private_cidr_2" {}
 variable "vpc_private_cidr_3" {}
 
 # VPC Module - Team 3
-# variable "rds_name" {}
-# variable "rds_engine" {}
-# variable "rds_engine_version" {}
-# variable "rds_instance_class" {}
-# variable "rds_ssm_parameter_name" {}
-# variable "rds_route53_zone" {}
+variable "rds_name" {}
+variable "rds_engine" {}
+variable "rds_engine_version" {}
+variable "rds_instance_class" {}
+variable "rds_ssm_parameter_name" {}
+variable "rds_route53_zone" {}
 
 # Auto Scaling Group.
 variable "aws_asg_name" {}

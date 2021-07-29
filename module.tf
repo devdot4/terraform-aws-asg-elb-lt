@@ -11,20 +11,20 @@ module "vpc" {
   region        = var.aws_region
   tags          = var.aws_tags
 }
-# module "rds" {
-#   source                  = "maxat2416/RDS-project/aws"
-#   version                 = "1.0.7"
-#   name                    = var.rds_name
-#   engine                  = var.rds_engine
-#   engine_version          = var.rds_engine_version
-#   instance_class          = var.rds_instance_class
-#   aws_ssm_parameter_name  = var.rds_ssm_parameter_name
-#   aws_route53_zone        = var.rds_route53_zone
-#   vpc_id                  = module.vpc.vpc
-#   subnet_ids              = module.vpc.private_subnets
-#   aws_db_subnet_group     = module.vpc.private_subnets
-#   vpc_security_group_id   = aws_security_group.aws_sg.id
-#   allowed_security_groups = [aws_security_group.aws_sg.id]
-#   allowed_cidr_blocks     = [var.vpc_cidr_block]
-#   region                  = var.aws_region
-# }
+module "rds" {
+  source                  = "maxat2416/RDS-project/aws"
+  version                 = "1.0.7"
+  name                    = var.rds_name
+  engine                  = var.rds_engine
+  engine_version          = var.rds_engine_version
+  instance_class          = var.rds_instance_class
+  aws_ssm_parameter_name  = var.rds_ssm_parameter_name
+  aws_route53_zone        = var.rds_route53_zone
+  vpc_id                  = module.vpc.vpc
+  subnet_ids              = module.vpc.private_subnets
+  aws_db_subnet_group     = module.vpc.private_subnets
+  vpc_security_group_id   = aws_security_group.aws_sg.id
+  allowed_security_groups = [aws_security_group.aws_sg.id]
+  allowed_cidr_blocks     = [var.vpc_cidr_block]
+  region                  = var.aws_region
+}
