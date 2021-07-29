@@ -5,6 +5,7 @@ resource "aws_autoscaling_group" "aws_asg" {
   max_size            = var.aws_asg_max_size
   capacity_rebalance  = var.aws_asg_capacity_rebalance
   vpc_zone_identifier = module.vpc.public_subnets
+  tags                = [var.aws_tags]
   mixed_instances_policy {
     instances_distribution {
       on_demand_base_capacity                  = var.aws_asg_on_demand_base_capacity

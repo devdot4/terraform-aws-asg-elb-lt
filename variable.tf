@@ -60,14 +60,14 @@ variable "aws_lt_name" {}
 variable "aws_lt_instance_type" {}
 
 # SSH-Keygen.
-variable "aws_key_pair_name" {}
-variable "aws_key_pair_path" {}
+variable "aws_kp_name" {}
+variable "aws_kp_path" {}
 
 # Security Group.
-variable "aws_security_group_name" {}
-variable "aws_security_group_description" {}
-variable "aws_security_group_service_ports" {}
-variable "aws_security_group_cidr_block" {}
+variable "aws_sg_name" {}
+variable "aws_sg_description" {}
+variable "aws_sg_service_ports" {}
+variable "aws_sg_cidr_block" {}
 
 # Data Source AWS AMI.
 variable "aws_ami_owners" {}
