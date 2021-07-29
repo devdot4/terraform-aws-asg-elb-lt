@@ -1,6 +1,7 @@
-resource "aws_elb" "elb-team4" {
-  name               = var.aws_elb_name
-  availability_zones = data.aws_availability_zones.all.names
+resource "aws_elb" "aws_elb" {
+  name            = var.aws_elb_name
+  subnets         = module.vpc.public_subnets
+  security_groups = [aws_security_group.aws_sg.id]
   listener {
     instance_port     = var.aws_elb_listener_instance_port
     instance_protocol = var.aws_elb_listener_instance_protocol
@@ -20,7 +21,10 @@ resource "aws_elb" "elb-team4" {
   connection_draining_timeout = var.aws_elb_connection_draining_timeout
   tags                        = var.aws_tags
 }
-resource "aws_autoscaling_attachment" "asg-attach-team4" {
-  autoscaling_group_name = aws_autoscaling_group.asg-team4.id
-  elb                    = aws_elb.elb-team4.id
+resource "aws_lb_target_group" "aws_lb_tg" {
+  name     = var.aws_lb_target_group_name
+  port     = var.aws_lb_target_group_port
+  protocol = var.aws_lb_target_group_protocol
+  vpc_id   = module.vpc.vpc
+  tags     = var.aws_tags
 }
