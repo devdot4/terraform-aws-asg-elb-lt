@@ -16,7 +16,7 @@ Module Configuration:
 # AWS Region.
 aws_region = "us-east-1"
 
-# VPC Module - Team 2
+# VPC Module - Team 2.
 vpc_cidr_block     = "10.0.0.0/16"
 vpc_public_cidr_1  = "10.0.101.0/24"
 vpc_public_cidr_2  = "10.0.102.0/24"
@@ -25,7 +25,7 @@ vpc_private_cidr_1 = "10.0.1.0/24"
 vpc_private_cidr_2 = "10.0.2.0/24"
 vpc_private_cidr_3 = "10.0.3.0/24"
 
-# RDS Module - Team 3
+# RDS Module - Team 3.
 rds_name               = "rds_db_team3_are_the_best"
 rds_engine             = "aurora"
 rds_engine_version     = "5.6.10a"
