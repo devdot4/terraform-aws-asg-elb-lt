@@ -1,26 +1,18 @@
+provider "aws" { region = var.aws_region }
 data "aws_availability_zones" "all" {}
 data "aws_ami" "image" {
-  owners      = var.aws_ami_owners
+  owners      = [var.aws_ami_owners]
   most_recent = var.aws_ami_most_recent
   filter {
-    name   = var.aws_ami_filter_name1
-    values = var.aws_ami_filter_value1
+    name   = var.aws_ami_filter_name_1
+    values = [var.aws_ami_filter_value_1]
   }
   filter {
-    name   = var.aws_ami_filter_name2
-    values = var.aws_ami_filter_value2
+    name   = var.aws_ami_filter_name_2
+    values = [var.aws_ami_filter_value_2]
   }
   filter {
-    name   = var.aws_ami_filter_name3
-    values = var.aws_ami_filter_value3
+    name   = var.aws_ami_filter_name_3
+    values = [var.aws_ami_filter_value_3]
   }
-}
-output "az" {
-  value = data.aws_availability_zones.all.names
-}
-output "public" {
-  value = module.vpc1.public_subnets
-}
-output "private" {
-  value = module.vpc1.private_subnets
 }
