@@ -1,30 +1,30 @@
-module "vpc1" {
+module "vpc" {
   source        = "dalerboboev/vpc1/aws"
   version       = "1.0.13"
+  cidr_block    = var.vpc_cidr_block
+  public_cidr1  = var.vpc_public_cidr_1
+  public_cidr2  = var.vpc_public_cidr_2
+  public_cidr3  = var.vpc_public_cidr_3
+  private_cidr1 = var.vpc_private_cidr_1
+  private_cidr2 = var.vpc_private_cidr_2
+  private_cidr3 = var.vpc_private_cidr_3
   region        = var.aws_region
-  cidr_block    = "10.0.0.0/16"
-  public_cidr1  = "10.0.101.0/24"
-  public_cidr2  = "10.0.102.0/24"
-  public_cidr3  = "10.0.103.0/24"
-  private_cidr1 = "10.0.1.0/24"
-  private_cidr2 = "10.0.2.0/24"
-  private_cidr3 = "10.0.3.0/24"
   tags          = var.aws_tags
 }
-module "db" {
-  version                 = "1.0.7"
-  source                  = "maxat2416/RDS-project/aws"
-  name                    = "rds_db_team3_are_the_best"
-  engine                  = "aurora"
-  engine_version          = "5.6.10a"
-  instance_class          = "db.t3.small"
-  vpc_id                  = module.vpc1.vpc
-  subnet_ids              = module.vpc1.private_subnets
-  allowed_security_groups = [aws_security_group.sec-group-team4.id]
-  allowed_cidr_blocks     = ["10.0.0.0/16"]
-  aws_ssm_parameter_name  = "/devops/us-east-1/passwords/team3db-cluster"
-  aws_route53_zone        = "devdot.com"
-  region                  = var.aws_region
-  vpc_security_group_id   = aws_security_group.sec-group-team4.id
-  aws_db_subnet_group     = module.vpc1.private_subnets
-}
+# module "rds" {
+#   source                  = "maxat2416/RDS-project/aws"
+#   version                 = "1.0.7"
+#   name                    = var.rds_name
+#   engine                  = var.rds_engine
+#   engine_version          = var.rds_engine_version
+#   instance_class          = var.rds_instance_class
+#   aws_ssm_parameter_name  = var.rds_ssm_parameter_name
+#   aws_route53_zone        = var.rds_route53_zone
+#   vpc_id                  = module.vpc.vpc
+#   subnet_ids              = module.vpc.private_subnets
+#   aws_db_subnet_group     = module.vpc.private_subnets
+#   vpc_security_group_id   = aws_security_group.aws_sg.id
+#   allowed_security_groups = [aws_security_group.aws_sg.id]
+#   allowed_cidr_blocks     = [var.vpc_cidr_block]
+#   region                  = var.aws_region
+# }
