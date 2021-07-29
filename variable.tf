@@ -18,6 +18,9 @@ variable "rds_instance_class" {}
 variable "rds_ssm_parameter_name" {}
 variable "rds_route53_zone" {}
 variable "rds_subnet_group_name" {}
+variable "rds_master_username" {}
+variable "rds_master_password" {}
+variable "rds_publicly_accessible" {}
 
 # Auto Scaling Group.
 variable "aws_asg_name" {}

@@ -18,17 +18,20 @@ rds_instance_class     = "db.t3.small"
 rds_ssm_parameter_name = "admin"
 rds_route53_zone       = "devdot.com"
 rds_subnet_group_name  = "rds-aurora"
+rds_master_username    = "admin"
+rds_master_password    = "redhat69"
+rds_publicly_accessible = false
 
 # Auto Scaling Group.
 aws_asg_name               = "aws-asg"
-aws_asg_desired_capacity   = 5
-aws_asg_min_size           = 5
+aws_asg_desired_capacity   = 4
+aws_asg_min_size           = 4
 aws_asg_max_size           = 99
 aws_asg_capacity_rebalance = true
 
 # ASG Mixed Instance Types.
-aws_asg_on_demand_base_capacity                  = 0
-aws_asg_on_demand_percentage_above_base_capacity = 25
+aws_asg_on_demand_base_capacity                  = 50
+aws_asg_on_demand_percentage_above_base_capacity = 50
 aws_asg_spot_allocation_strategy                 = "capacity-optimized"
 aws_asg_instance_type_1                          = "t2.micro"
 aws_asg_weighted_capacity_1                      = "4"
@@ -46,7 +49,7 @@ aws_elb_listener_lb_protocol             = "http"
 aws_elb_health_check_healthy_threshold   = 2
 aws_elb_health_check_unhealthy_threshold = 2
 aws_elb_health_check_timeout             = 3
-aws_elb_health_check_target              = "HTTP:80/"
+aws_elb_health_check_target              = "HTTP:80/index.html"
 aws_elb_health_check_interval            = 30
 aws_elb_cross_zone_load_balancing        = true
 aws_elb_idle_timeout                     = 400

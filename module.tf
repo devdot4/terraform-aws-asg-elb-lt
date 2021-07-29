@@ -18,7 +18,7 @@ module "rds" {
   engine                   = var.rds_engine
   engine_version           = var.rds_engine_version
   instance_class           = var.rds_instance_class
-  aws_ssm_parameter_name   = var.rds_ssm_parameter_name
+  # aws_ssm_parameter_name   = var.rds_ssm_parameter_name
   aws_route53_zone         = var.rds_route53_zone
   aws_db_subnet_group_name = var.rds_subnet_group_name
   vpc_id                   = module.vpc.vpc
@@ -28,4 +28,7 @@ module "rds" {
   allowed_security_groups  = [aws_security_group.aws_sg.id]
   allowed_cidr_blocks      = [var.vpc_cidr_block]
   region                   = var.aws_region
+  master_username          = var.rds_master_username
+  master_password          = var.rds_master_password
+  publicly_accessible      = var.rds_publicly_accessible
 }
