@@ -24,11 +24,11 @@ variable "aws_asg_desired_capacity" {}
 variable "aws_asg_min_size" {}
 variable "aws_asg_max_size" {}
 variable "aws_asg_capacity_rebalance" {}
+
+# ASG Mixed Instance Types.
 variable "aws_asg_on_demand_base_capacity" {}
 variable "aws_asg_on_demand_percentage_above_base_capacity" {}
 variable "aws_asg_spot_allocation_strategy" {}
-
-# ASG Mixed Instance Types.
 variable "aws_asg_instance_type_1" {}
 variable "aws_asg_weighted_capacity_1" {}
 variable "aws_asg_instance_type_2" {}
@@ -59,15 +59,15 @@ variable "aws_lb_target_group_protocol" {}
 variable "aws_lt_name" {}
 variable "aws_lt_instance_type" {}
 
-# Security Group.
-variable "aws_security_group_name" {}
-variable "aws_security_group_description" {}
-variable "aws_security_group_cidr_block" {}
-variable "aws_security_group_service_ports" {}
-
 # SSH-Keygen.
 variable "aws_key_pair_name" {}
 variable "aws_key_pair_path" {}
+
+# Security Group.
+variable "aws_security_group_name" {}
+variable "aws_security_group_description" {}
+variable "aws_security_group_service_ports" {}
+variable "aws_security_group_cidr_block" {}
 
 # Data Source AWS AMI.
 variable "aws_ami_owners" {}
