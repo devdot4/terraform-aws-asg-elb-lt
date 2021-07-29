@@ -1,7 +1,7 @@
 # AWS Region.
 variable "aws_region" {}
 
-# VPC Module - Team 2
+# VPC Module - Team 2.
 variable "vpc_cidr_block" {}
 variable "vpc_public_cidr_1" {}
 variable "vpc_public_cidr_2" {}
@@ -10,7 +10,7 @@ variable "vpc_private_cidr_1" {}
 variable "vpc_private_cidr_2" {}
 variable "vpc_private_cidr_3" {}
 
-# VPC Module - Team 3
+# VPC Module - Team 3.
 variable "rds_name" {}
 variable "rds_engine" {}
 variable "rds_engine_version" {}
