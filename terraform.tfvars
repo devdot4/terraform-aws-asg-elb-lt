@@ -11,15 +11,15 @@ vpc_private_cidr_2 = "10.0.2.0/24"
 vpc_private_cidr_3 = "10.0.3.0/24"
 
 # RDS Module - Team 3.
-rds_name               = "rds_db_team3_are_the_best"
-rds_engine             = "aurora"
-rds_engine_version     = "5.6.10a"
-rds_instance_class     = "db.t3.small"
-rds_ssm_parameter_name = "admin"
-rds_route53_zone       = "devdot.com"
-rds_subnet_group_name  = "rds-aurora"
-rds_master_username    = "admin"
-rds_master_password    = "redhat69"
+rds_name                = "rds_db_team3_are_the_best"
+rds_engine              = "aurora"
+rds_engine_version      = "5.6.10a"
+rds_instance_class      = "db.t3.small"
+rds_ssm_parameter_name  = "admin"
+rds_route53_zone        = "devdot.com"
+rds_subnet_group_name   = "rds-aurora"
+rds_master_username     = "admin"
+rds_master_password     = "redhat69"
 rds_publicly_accessible = false
 
 # Auto Scaling Group.
@@ -49,7 +49,7 @@ aws_elb_listener_lb_protocol             = "http"
 aws_elb_health_check_healthy_threshold   = 2
 aws_elb_health_check_unhealthy_threshold = 2
 aws_elb_health_check_timeout             = 3
-aws_elb_health_check_target              = "HTTP:80/index.html"
+aws_elb_health_check_target              = "HTTP:80/"
 aws_elb_health_check_interval            = 30
 aws_elb_cross_zone_load_balancing        = true
 aws_elb_idle_timeout                     = 400
@@ -63,6 +63,7 @@ aws_lb_target_group_protocol = "HTTP"
 
 # Launch Template Configuration.
 aws_lt_name          = "aws-lt"
+aws_lt_image_id      = "ami-0e34887e651572049"
 aws_lt_instance_type = "c5.large"
 
 # SSH-Keygen.

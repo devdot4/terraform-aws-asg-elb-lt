@@ -63,6 +63,7 @@ variable "aws_lb_target_group_protocol" {}
 
 # Launch Template Configuration.
 variable "aws_lt_name" {}
+variable "aws_lt_image_id" {}
 variable "aws_lt_instance_type" {}
 
 # SSH-Keygen.

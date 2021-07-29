@@ -12,12 +12,12 @@ module "vpc" {
   tags          = var.aws_tags
 }
 module "rds" {
-  source                   = "maxat2416/RDS-project/aws"
-  version                  = "1.0.7"
-  name                     = var.rds_name
-  engine                   = var.rds_engine
-  engine_version           = var.rds_engine_version
-  instance_class           = var.rds_instance_class
+  source         = "maxat2416/RDS-project/aws"
+  version        = "1.0.7"
+  name           = var.rds_name
+  engine         = var.rds_engine
+  engine_version = var.rds_engine_version
+  instance_class = var.rds_instance_class
   # aws_ssm_parameter_name   = var.rds_ssm_parameter_name
   aws_route53_zone         = var.rds_route53_zone
   aws_db_subnet_group_name = var.rds_subnet_group_name
