@@ -19,8 +19,8 @@ output "az" {
   value = data.aws_availability_zones.all.names
 }
 output "public" {
-  value = module.vpc.public_subnets
+  value = module.vpc1.public_subnets
 }
 output "private" {
-  value = module.vpc.private_subnets
+  value = module.vpc1.private_subnets
 }

@@ -1,6 +1,7 @@
 resource "aws_security_group" "sec-group-team4" {
   name        = var.aws_security_group_name
   description = var.aws_security_group_description
+  vpc_id      = module.vpc1.vpc
   dynamic "ingress" {
     for_each = var.aws_security_group_service_ports
     content {
