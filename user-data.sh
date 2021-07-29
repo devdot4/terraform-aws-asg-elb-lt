@@ -10,5 +10,5 @@ tar -xzvf latest.tar.gz
 cp -r wordpress/* /var/www/html/
 chown -R apache:apache /var/www/html
 systemctl restart httpd
-cd /var/www/html/
-curl -OL https://raw.githubusercontent.com/devdot4/team4-project/main/wp-config.php 
+cd 
+curl -OL https://raw.githubusercontent.com/devdot4/team4-project/main/wp-config.php
