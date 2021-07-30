@@ -14,7 +14,7 @@ File Dependency Hierarchy:
 Module Configuration:
 ```
 # AWS Region.
-aws_region = "us-east-1"
+aws_region = "us-east-2"
 
 # VPC Module - Team 2.
 vpc_cidr_block     = "10.0.0.0/16"
@@ -26,13 +26,16 @@ vpc_private_cidr_2 = "10.0.2.0/24"
 vpc_private_cidr_3 = "10.0.3.0/24"
 
 # RDS Module - Team 3.
-rds_name               = "rds_db_team3_are_the_best"
+rds_name               = "wordpress"
 rds_engine             = "aurora"
 rds_engine_version     = "5.6.10a"
 rds_instance_class     = "db.t3.small"
 rds_ssm_parameter_name = "admin"
-rds_route53_zone       = "devdot.com"
+rds_route53_zone       = "devdot4.net"
 rds_subnet_group_name  = "rds-aurora"
+rds_cluster_identifier = "wordpress"
+rds_master_username    = "admin"
+rds_master_password    = "redhat69"
 
 # Auto Scaling Group.
 aws_asg_name               = "aws-asg"
@@ -42,14 +45,14 @@ aws_asg_max_size           = 99
 aws_asg_capacity_rebalance = true
 
 # ASG Mixed Instance Types.
-aws_asg_on_demand_base_capacity                  = 0
-aws_asg_on_demand_percentage_above_base_capacity = 25
+aws_asg_on_demand_base_capacity                  = 50
+aws_asg_on_demand_percentage_above_base_capacity = 50
 aws_asg_spot_allocation_strategy                 = "capacity-optimized"
-aws_asg_instance_type_1                          = "t2.micro"
-aws_asg_weighted_capacity_1                      = "4"
-aws_asg_instance_type_2                          = "t3.small"
+aws_asg_instance_type_1                          = "c3.large"
+aws_asg_weighted_capacity_1                      = "3"
+aws_asg_instance_type_2                          = "c4.large"
 aws_asg_weighted_capacity_2                      = "2"
-aws_asg_instance_type_3                          = "t3.xlarge"
+aws_asg_instance_type_3                          = "c5.large"
 aws_asg_weighted_capacity_3                      = "1"
 
 # Elastic Load Balancer.
@@ -75,7 +78,8 @@ aws_lb_target_group_protocol = "HTTP"
 
 # Launch Template Configuration.
 aws_lt_name          = "aws-lt"
-aws_lt_instance_type = "c5.large"
+aws_lt_image_id      = "ami-0cde3d3eb0550c016"
+aws_lt_instance_type = "c3.large"
 
 # SSH-Keygen.
 aws_kp_name = "aws-key-pair"
