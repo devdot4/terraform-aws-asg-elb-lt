@@ -13,7 +13,7 @@ module "vpc" {
 }
 module "rds" {
   source                   = "maxat2416/RDS-project/aws"
-  version                  = "1.0.8"
+  version                  = "1.0.9"
   region                   = var.aws_region
   name                     = var.rds_name
   engine                   = var.rds_engine

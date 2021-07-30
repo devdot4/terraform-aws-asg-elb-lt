@@ -1,9 +1,31 @@
+<?php
+/**
+ * The base configuration for WordPress
+ *
+ * The wp-config.php creation script uses this file during the installation.
+ * You don't have to use the web site, you can copy this file to "wp-config.php"
+ * and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
+ *
+ * @package WordPress
+ */
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'wordpress' );
 /** MySQL database username */
 define( 'DB_USER', 'admin' );
 /** MySQL database password */
 define( 'DB_PASSWORD', 'redhat69' );
 /** MySQL hostname */
-define( 'DB_HOST', '' );
+define( 'DB_HOST', 'wordpress.cluster-cn4kwvg2scph.us-east-1.rds.amazonaws.com' );
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
