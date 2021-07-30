@@ -63,7 +63,7 @@ aws_lb_target_group_protocol = "HTTP"
 
 # Launch Template Configuration.
 aws_lt_name          = "aws-lt"
-# aws_lt_image_id      = "ami-0e34887e651572049"
+aws_lt_image_id      = "ami-0cde3d3eb0550c016"
 aws_lt_instance_type = "c3.large"
 
 # SSH-Keygen.
@@ -76,15 +76,15 @@ aws_sg_description   = "Allow TLS inbound traffic."
 aws_sg_service_ports = ["22", "80", "443", "3306"]
 aws_sg_cidr_block    = "0.0.0.0/0"
 
-# Data Source AWS AMI.
-aws_ami_owners         = "679593333241"
-aws_ami_most_recent    = true
-aws_ami_filter_name_1  = "name"
-aws_ami_filter_value_1 = "CentOS Linux 7 x86_64 HVM EBS *"
-aws_ami_filter_name_2  = "architecture"
-aws_ami_filter_value_2 = "x86_64"
-aws_ami_filter_name_3  = "root-device-type"
-aws_ami_filter_value_3 = "ebs"
+# # Data Source AWS AMI.
+# aws_ami_owners         = "679593333241"
+# aws_ami_most_recent    = true
+# aws_ami_filter_name_1  = "name"
+# aws_ami_filter_value_1 = "CentOS Linux 7 x86_64 HVM EBS *"
+# aws_ami_filter_name_2  = "architecture"
+# aws_ami_filter_value_2 = "x86_64"
+# aws_ami_filter_name_3  = "root-device-type"
+# aws_ami_filter_value_3 = "ebs"
 
 # Tags.
 aws_tags = {
