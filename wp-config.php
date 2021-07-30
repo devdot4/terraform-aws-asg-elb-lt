@@ -3,7 +3,7 @@ define( 'DB_USER', 'admin' );
 /** MySQL database password */
 define( 'DB_PASSWORD', 'redhat69' );
 /** MySQL hostname */
-define( 'DB_HOST', '' );
+define( 'DB_HOST', 'wordpress.cluster-cn4kwvg2scph.us-east-1.rds.amazonaws.com' );
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
