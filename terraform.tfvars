@@ -24,8 +24,8 @@ rds_master_password    = "redhat69"
 
 # Auto Scaling Group.
 aws_asg_name               = "aws-asg"
-aws_asg_desired_capacity   = 10
-aws_asg_min_size           = 10
+aws_asg_desired_capacity   = 5
+aws_asg_min_size           = 5
 aws_asg_max_size           = 99
 aws_asg_capacity_rebalance = true
 
@@ -34,11 +34,11 @@ aws_asg_on_demand_base_capacity                  = 50
 aws_asg_on_demand_percentage_above_base_capacity = 50
 aws_asg_spot_allocation_strategy                 = "capacity-optimized"
 aws_asg_instance_type_1                          = "c3.large"
-aws_asg_weighted_capacity_1                      = "4"
+aws_asg_weighted_capacity_1                      = "3"
 aws_asg_instance_type_2                          = "c4.large"
-aws_asg_weighted_capacity_2                      = "3"
+aws_asg_weighted_capacity_2                      = "2"
 aws_asg_instance_type_3                          = "c5.large"
-aws_asg_weighted_capacity_3                      = "2"
+aws_asg_weighted_capacity_3                      = "1"
 
 # Elastic Load Balancer.
 aws_elb_name                             = "aws-elb"
