@@ -1,5 +1,3 @@
-provider "aws" { region = var.aws_region }
-data "aws_availability_zones" "all" {}
 module "vpc" {
   source        = "dalerboboev/vpc1/aws"
   version       = "1.0.13"

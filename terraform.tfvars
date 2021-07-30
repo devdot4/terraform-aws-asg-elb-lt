@@ -16,7 +16,7 @@ rds_engine             = "aurora"
 rds_engine_version     = "5.6.10a"
 rds_instance_class     = "db.t3.small"
 rds_ssm_parameter_name = "admin"
-rds_route53_zone       = "devdot.net"
+rds_route53_zone       = "devdot4.net"
 rds_subnet_group_name  = "rds-aurora"
 rds_cluster_identifier = "wordpress"
 rds_master_username    = "admin"
@@ -63,7 +63,7 @@ aws_lb_target_group_protocol = "HTTP"
 
 # Launch Template Configuration.
 aws_lt_name          = "aws-lt"
-aws_lt_image_id      = "ami-0e34887e651572049"
+# aws_lt_image_id      = "ami-0e34887e651572049"
 aws_lt_instance_type = "c3.large"
 
 # SSH-Keygen.
