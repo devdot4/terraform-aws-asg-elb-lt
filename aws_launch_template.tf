@@ -15,19 +15,19 @@ resource "aws_key_pair" "aws_kp" {
   public_key = file(var.aws_kp_path)
   tags       = var.aws_tags
 }
-data "aws_ami" "image" {
-  owners      = [var.aws_ami_owners]
-  most_recent = var.aws_ami_most_recent
-  filter {
-    name   = var.aws_ami_filter_name_1
-    values = [var.aws_ami_filter_value_1]
-  }
-  filter {
-    name   = var.aws_ami_filter_name_2
-    values = [var.aws_ami_filter_value_2]
-  }
-  filter {
-    name   = var.aws_ami_filter_name_3
-    values = [var.aws_ami_filter_value_3]
-  }
-}
+# data "aws_ami" "image" {
+#   owners      = [var.aws_ami_owners]
+#   most_recent = var.aws_ami_most_recent
+#   filter {
+#     name   = var.aws_ami_filter_name_1
+#     values = [var.aws_ami_filter_value_1]
+#   }
+#   filter {
+#     name   = var.aws_ami_filter_name_2
+#     values = [var.aws_ami_filter_value_2]
+#   }
+#   filter {
+#     name   = var.aws_ami_filter_name_3
+#     values = [var.aws_ami_filter_value_3]
+#   }
+# }
