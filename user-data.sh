@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo yum install mysql -y
 sudo yum install epel-release yum-utils wget -y
 sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 sudo yum-config-manager --disable remi-php54
