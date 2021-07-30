@@ -10,6 +10,6 @@ sudo tar -xzvf latest.tar.gz
 sudo cp -r wordpress/* /var/www/html/
 sudo setenforce 0
 sudo cd /var/www/html/
-sudo curl -OL https://raw.githubusercontent.com/devdot4/team4-project/main/wp-config.php
+sudo wget https://raw.githubusercontent.com/devdot4/team4-project/main/wp-config.php
 sudo chown -R apache:apache /var/www/html
 sudo systemctl restart httpd
