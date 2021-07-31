@@ -105,7 +105,7 @@ module "project" {
   }
 }
 ```
-Please run the following commands to run this module:
+Please enter the following commands to run this module:
 ```
 terraform init
 terraform apply
