@@ -12,12 +12,11 @@ File Dependency Hierarchy:
       └─user-data.sh
 ```
 ## Module Configuration:
-
 Please create a terraform file and add these lines below:
 ```
 module "project" {
-  source  = "devdot4/project/team4"
-  version = "1.0.1"
+  source  = "devdot4/aws/asg-elb-lt"
+  version = "1.0.0"
 
   # AWS Region.
   aws_region = "us-east-1"
@@ -97,16 +96,6 @@ module "project" {
   aws_sg_service_ports = ["22", "80", "443", "3306"]
   aws_sg_cidr_block    = "0.0.0.0/0"
 
-  # Data Source AWS AMI.
-  aws_ami_owners         = "679593333241"
-  aws_ami_most_recent    = true
-  aws_ami_filter_name_1  = "name"
-  aws_ami_filter_value_1 = "CentOS Linux 7 x86_64 HVM EBS *"
-  aws_ami_filter_name_2  = "architecture"
-  aws_ami_filter_value_2 = "x86_64"
-  aws_ami_filter_name_3  = "root-device-type"
-  aws_ami_filter_value_3 = "ebs"
-
   # Tags.
   aws_tags = {
     Name        = "team-4"
@@ -115,7 +104,6 @@ module "project" {
   }
 }
 ```
-
 Please run the following commands to run this module:
 ```
 terraform init

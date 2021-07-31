@@ -76,15 +76,15 @@ variable "aws_sg_description" {}
 variable "aws_sg_service_ports" {}
 variable "aws_sg_cidr_block" {}
 
-# # Data Source AWS AMI.
-# variable "aws_ami_owners" {}
-# variable "aws_ami_most_recent" {}
-# variable "aws_ami_filter_name_1" {}
-# variable "aws_ami_filter_value_1" {}
-# variable "aws_ami_filter_name_2" {}
-# variable "aws_ami_filter_value_2" {}
-# variable "aws_ami_filter_name_3" {}
-# variable "aws_ami_filter_value_3" {}
+# Data Source AWS AMI.
+variable "aws_ami_owners" {}
+variable "aws_ami_most_recent" {}
+variable "aws_ami_filter_name_1" {}
+variable "aws_ami_filter_value_1" {}
+variable "aws_ami_filter_name_2" {}
+variable "aws_ami_filter_value_2" {}
+variable "aws_ami_filter_name_3" {}
+variable "aws_ami_filter_value_3" {}
 
 # Tags.
 variable "aws_tags" {}
