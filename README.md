@@ -10,12 +10,13 @@ File Dependency Hierarchy:
     ├─aws_security_group.tf
     └─aws_launch_template.tf
       └─user-data.sh
+        └─wp-config.php
 ```
 ## Module Configuration:
 Please create a terraform file and add these lines below:
 ```
 module "project" {
-  source  = "devdot4/aws/asg-elb-lt"
+  source  = "devdot4/asg-elb-lt/aws"
   version = "1.0.0"
 
   # AWS Region.
