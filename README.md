@@ -17,7 +17,7 @@ Please create a terraform file and add these lines below:
 ```
 module "project" {
   source  = "devdot4/asg-elb-lt/aws"
-  version = "1.0.0"
+  version = "1.0.2"
 
   # AWS Region.
   aws_region = "us-east-1"
