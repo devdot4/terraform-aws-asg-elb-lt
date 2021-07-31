@@ -15,7 +15,7 @@ File Dependency Hierarchy:
 ## Module Configuration:
 Please create a terraform file and add these lines below:
 ```
-module "project" {
+module "asg-elb-lt" {
   source  = "devdot4/asg-elb-lt/aws"
   version = "1.0.2"
 
